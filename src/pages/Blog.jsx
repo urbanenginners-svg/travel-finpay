@@ -25,7 +25,7 @@ const Blog = () => {
       className="min-h-screen bg-pearl"
     >
       {/* Header */}
-      <div className="bg-gradient-to-r from-teal to-skyblue text-white py-20 pt-32">
+      <div className="bg-gradient-to-br from-teal via-teal/90 to-purple-600 text-white py-20 pt-32">
         <div className="container mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

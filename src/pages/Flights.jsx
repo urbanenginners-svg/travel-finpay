@@ -28,7 +28,7 @@ const Flights = () => {
       className="min-h-screen bg-pearl"
     >
       {/* Header */}
-      <div className="bg-gradient-to-r from-skyblue to-teal text-white py-16 pt-28">
+      <div className="bg-gradient-to-br from-purple-600 via-blue-600 to-teal text-white py-16 pt-28">
         <div className="container mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
