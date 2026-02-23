@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import BlogCard from '../components/BlogCard'
+import NewsletterSection from '../components/NewsletterSection'
 import { blogsData, blogCategories } from '../data/blogsData'
 
 const Blog = () => {
@@ -151,33 +152,7 @@ const Blog = () => {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-gradient-to-r from-teal to-skyblue text-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto text-center"
-          >
-            <h2 className="text-4xl font-bold mb-4">
-              Never Miss an Update
-            </h2>
-            <p className="text-xl text-white/90 mb-8">
-              Subscribe to get travel tips, destination guides, and exclusive deals
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-xl text-navy focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button className="bg-white text-teal px-8 py-4 rounded-xl font-semibold hover:bg-opacity-90 transition-all">
-                Subscribe
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <NewsletterSection />
     </motion.div>
   )
 }
