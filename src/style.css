@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pearl: #F9FBFF;
+  --color-skyblue: #4DA8FF;
+  --color-teal: #4FD1C5;
+  --color-gold: #F6C453;
+  --color-navy: #0F172A;
+  
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  
+  --backdrop-blur-xs: 2px;
+}
+
+@layer base {
+  body {
+    @apply bg-pearl text-navy;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md rounded-2xl shadow-glass;
+  }
+  
+  .btn-primary {
+    @apply bg-skyblue text-white px-6 py-3 rounded-xl font-semibold 
+           hover:bg-skyblue/90 transition-all duration-300 shadow-soft
+           hover:shadow-lg hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-teal text-white px-6 py-3 rounded-xl font-semibold 
+           hover:bg-teal/90 transition-all duration-300 shadow-soft
+           hover:shadow-lg hover:-translate-y-0.5;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-skyblue text-skyblue px-6 py-3 rounded-xl 
+           font-semibold hover:bg-skyblue hover:text-white 
+           transition-all duration-300;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4DA8FF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3d8cd9;
+}
+
+/* Smooth transitions */
+* {
+  scroll-behavior: smooth;
+}
