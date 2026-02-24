@@ -123,7 +123,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-bold mb-6">
-                Why Choose Fin Holidays?
+                Why Choose Fin Yourtrip?
               </h2>
               <p className="text-white/80 text-lg mb-8 leading-relaxed">
                 We're not just a travel company – we're your trusted partner in creating 
@@ -322,7 +322,7 @@ const Home = () => {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed"
               >
-                Join thousands of happy travelers who trust Fin Holidays for their dream vacations. 
+                Join thousands of happy travelers who trust Fin Yourtrip for their dream vacations. 
                 Discover extraordinary destinations and create memories that last a lifetime.
               </motion.p>
 

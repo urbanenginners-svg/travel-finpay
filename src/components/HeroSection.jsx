@@ -103,7 +103,7 @@ const HeroSection = () => {
             >
               Explore the World with{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-skyblue via-teal to-gold">
-                Fin Holidays
+                Fin Yourtrip
               </span>
             </motion.h1>
 

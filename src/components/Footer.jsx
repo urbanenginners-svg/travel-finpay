@@ -45,7 +45,7 @@ const Footer = () => {
                 <MdFlight className="text-white text-2xl" />
               </div>
               <span className="text-2xl font-bold">
-                Fin <span className="text-skyblue">Holidays</span>
+                Fin <span className="text-skyblue">Yourtrip</span>
               </span>
             </Link>
             <p className="text-white/70 mb-4 leading-relaxed">
@@ -129,7 +129,7 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/70 text-sm">
-              © {currentYear} Fin Holidays. All rights reserved.
+              © {currentYear} Fin Yourtrip. All rights reserved.
             </p>
             
             {/* Social Media */}
