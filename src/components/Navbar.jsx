@@ -53,7 +53,7 @@ const Navbar = () => {
                 <MdFlight className="text-white text-2xl" />
               </div>
               <span className="text-2xl font-bold text-navy">
-                Fin <span className="text-skyblue">Holidays</span>
+                Fin <span className="text-skyblue">Yourtrip</span>
               </span>
             </motion.div>
           </Link>
