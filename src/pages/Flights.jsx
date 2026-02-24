@@ -135,8 +135,8 @@ const Flights = () => {
                     className="w-full"
                   />
                   <div className="flex justify-between text-sm text-navy/70 mt-2">
-                    <span>$0</span>
-                    <span>${filters.maxPrice}</span>
+                    <span>₹0</span>
+                    <span>₹{filters.maxPrice}</span>
                   </div>
                 </div>
 

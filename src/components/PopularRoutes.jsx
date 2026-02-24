@@ -51,7 +51,7 @@ const PopularRoutes = () => {
 
               <div className="flex items-center justify-between pt-4 border-t border-navy/10">
                 <div className="text-sm text-navy/70">Starting from</div>
-                <div className="text-2xl font-bold text-skyblue">${route.basePrice}</div>
+                <div className="text-2xl font-bold text-skyblue">₹{route.basePrice}</div>
               </div>
             </motion.div>
           ))}

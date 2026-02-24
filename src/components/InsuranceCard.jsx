@@ -50,7 +50,7 @@ const InsuranceCard = ({ plan, delay = 0 }) => {
       {/* Price */}
       <div className="text-center mb-6">
         <div className="flex items-baseline justify-center">
-          <span className="text-5xl font-bold text-navy">${plan.price}</span>
+          <span className="text-5xl font-bold text-navy">₹{plan.price}</span>
           <span className="text-navy/60 ml-2">/ {plan.duration.split('(')[0]}</span>
         </div>
         <div className="text-sm text-navy/60 mt-1">{plan.duration}</div>

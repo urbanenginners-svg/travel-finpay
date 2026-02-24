@@ -69,7 +69,7 @@ const FlightCard = ({ flight, delay = 0 }) => {
         <div className="lg:w-1/6 flex flex-row lg:flex-col items-center lg:items-end justify-between lg:justify-center gap-4 lg:gap-3">
           <div className="text-right">
             <div className="text-sm text-navy/60">{flight.class}</div>
-            <div className="text-3xl font-bold text-navy">${flight.price}</div>
+            <div className="text-3xl font-bold text-navy">₹{flight.price}</div>
             <div className="text-xs text-navy/60">per person</div>
           </div>
           <motion.button

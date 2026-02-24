@@ -33,7 +33,7 @@ const Community = () => {
       author: 'Budget Traveler',
       authorImage: 'https://i.pravatar.cc/150?img=12',
       verified: true,
-      title: 'How I Traveled Europe on $50/Day',
+      title: 'How I Traveled Europe on ₹50/Day',
       category: 'Budget Travel',
       excerpt: 'Just completed a 30-day Europe trip on a tight budget. Here are my tips and tricks for budget-conscious travelers.',
       replies: 67,

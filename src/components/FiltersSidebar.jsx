@@ -59,8 +59,8 @@ const FiltersSidebar = ({ type = 'tours' }) => {
               className="w-full"
             />
             <div className="flex justify-between text-sm text-navy/70">
-              <span>${filters.priceRange[0]}</span>
-              <span>${filters.priceRange[1]}</span>
+              <span>₹{filters.priceRange[0]}</span>
+              <span>₹{filters.priceRange[1]}</span>
             </div>
           </motion.div>
         )}

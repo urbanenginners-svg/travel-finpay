@@ -21,7 +21,7 @@ const PackageCard = ({ tour, delay = 0 }) => {
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute top-4 left-4 bg-gold text-navy px-3 py-1 rounded-full text-sm font-semibold">
-          ${tour.price}
+          ₹{tour.price}
         </div>
         {tour.featured && (
           <div className="absolute top-4 right-4 bg-teal text-white px-3 py-1 rounded-full text-sm font-semibold">

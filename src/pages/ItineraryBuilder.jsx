@@ -28,21 +28,21 @@ const ItineraryBuilder = () => {
       title: '7-Day European Adventure',
       destination: 'Paris, Rome, Barcelona',
       days: 7,
-      budget: '$2,500',
+      budget: '₹2,500',
       image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&auto=format&fit=crop'
     },
     {
       title: '5-Day Beach Paradise',
       destination: 'Maldives',
       days: 5,
-      budget: '$1,800',
+      budget: '₹1,800',
       image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400&auto=format&fit=crop'
     },
     {
       title: '10-Day Asian Explorer',
       destination: 'Tokyo, Bangkok, Singapore',
       days: 10,
-      budget: '$3,200',
+      budget: '₹3,200',
       image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&auto=format&fit=crop'
     }
   ]
@@ -124,10 +124,10 @@ const ItineraryBuilder = () => {
                     Budget
                   </label>
                   <select className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none">
-                    <option>Under $1,000</option>
-                    <option>$1,000 - $2,500</option>
-                    <option>$2,500 - $5,000</option>
-                    <option>$5,000+</option>
+                    <option>Under ₹1,000</option>
+                    <option>₹1,000 - ₹2,500</option>
+                    <option>₹2,500 - ₹5,000</option>
+                    <option>₹5,000+</option>
                   </select>
                 </div>
 

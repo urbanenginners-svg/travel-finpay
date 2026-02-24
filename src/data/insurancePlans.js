@@ -7,10 +7,10 @@ export const insurancePlans = [
     popular: false,
     description: "Essential coverage for short trips",
     coverage: {
-      medical: "$50,000",
-      evacuation: "$100,000",
-      baggage: "$500",
-      cancellation: "$1,000",
+      medical: "₹50,000",
+      evacuation: "₹100,000",
+      baggage: "₹500",
+      cancellation: "₹1,000",
       delay: "Not Covered"
     },
     features: [
@@ -36,11 +36,11 @@ export const insurancePlans = [
     popular: true,
     description: "Comprehensive protection for most travelers",
     coverage: {
-      medical: "$100,000",
-      evacuation: "$250,000",
-      baggage: "$1,500",
-      cancellation: "$3,000",
-      delay: "$500"
+      medical: "₹100,000",
+      evacuation: "₹250,000",
+      baggage: "₹1,500",
+      cancellation: "₹3,000",
+      delay: "₹500"
     },
     features: [
       "Everything in Basic",
@@ -66,11 +66,11 @@ export const insurancePlans = [
     popular: false,
     description: "Maximum protection for worry-free travel",
     coverage: {
-      medical: "$250,000",
-      evacuation: "$500,000",
-      baggage: "$3,000",
-      cancellation: "$10,000",
-      delay: "$1,500"
+      medical: "₹250,000",
+      evacuation: "₹500,000",
+      baggage: "₹3,000",
+      cancellation: "₹10,000",
+      delay: "₹1,500"
     },
     features: [
       "Everything in Standard",
@@ -98,11 +98,11 @@ export const insurancePlans = [
     popular: false,
     description: "Best value for frequent travelers",
     coverage: {
-      medical: "$150,000",
-      evacuation: "$300,000",
-      baggage: "$2,000",
-      cancellation: "$5,000",
-      delay: "$1,000"
+      medical: "₹150,000",
+      evacuation: "₹300,000",
+      baggage: "₹2,000",
+      cancellation: "₹5,000",
+      delay: "₹1,000"
     },
     features: [
       "Unlimited trips up to 30 days each",
