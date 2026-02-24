@@ -236,8 +236,8 @@ const Insurance = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { icon: <MdPhone />, title: 'Call Us', detail: '+1 (555) 123-4567' },
-              { icon: <MdEmail />, title: 'Email Us', detail: 'insurance@finholidays.com' },
+              { icon: <MdPhone />, title: 'Call Us', detail: '01724646022 / 9210318883' },
+              { icon: <MdEmail />, title: 'Email Us', detail: 'support@finpayremit.com' },
               { icon: <MdChat />, title: 'Live Chat', detail: 'Available 24/7' }
             ].map((contact, index) => (
               <motion.div

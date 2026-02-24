@@ -55,16 +55,20 @@ const Footer = () => {
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-white/70">
-                <MdLocationOn className="text-skyblue" />
-                <span>123 Travel Street, Tourism City, TC 12345</span>
+                <MdLocationOn className="text-skyblue flex-shrink-0" />
+                <span>SCO 845-846, First Floor, Sector 22 A, Chandigarh-160022</span>
               </div>
               <div className="flex items-center space-x-2 text-white/70">
-                <MdPhone className="text-skyblue" />
-                <span>+1 (555) 123-4567</span>
+                <MdPhone className="text-skyblue flex-shrink-0" />
+                <span>01724646022</span>
               </div>
               <div className="flex items-center space-x-2 text-white/70">
-                <MdEmail className="text-skyblue" />
-                <span>hello@finholidays.com</span>
+                <MdPhone className="text-skyblue flex-shrink-0" />
+                <span>9210318883 (Mobile)</span>
+              </div>
+              <div className="flex items-center space-x-2 text-white/70">
+                <MdEmail className="text-skyblue flex-shrink-0" />
+                <span>support@finpayremit.com</span>
               </div>
             </div>
           </div>
