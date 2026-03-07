@@ -27,11 +27,11 @@ const Blog = () => {
     >
       {/* Header */}
       <div className="bg-gradient-to-br from-teal via-teal/90 to-purple-600 text-white py-20 pt-32">
-        <div className="container mx-auto px-4">
+        <div className="site-container">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold mb-4"
+            className="page-title"
           >
             Travel Blog
           </motion.h1>
@@ -39,7 +39,7 @@ const Blog = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/90"
+            className="page-lead"
           >
             Travel tips, destination guides, and inspiring stories
           </motion.p>
@@ -48,8 +48,8 @@ const Blog = () => {
 
       {/* Featured Article Hero */}
       {featuredBlog && (
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4">
+        <section className="section-spacing-tight bg-white">
+          <div className="site-container">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -106,13 +106,13 @@ const Blog = () => {
 
       {/* Category Filter */}
       <div className="bg-white shadow-soft py-4 sticky top-20 z-40">
-        <div className="container mx-auto px-4">
+        <div className="site-container">
           <div className="flex items-center space-x-2 overflow-x-auto pb-2">
             {blogCategories.map((category) => (
               <button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`px-6 py-2 rounded-xl font-medium whitespace-nowrap transition-all ${
+                className={`chip-button ${
                   activeCategory === category
                     ? 'bg-teal text-white shadow-lg'
                     : 'bg-pearl text-navy hover:bg-teal/10'
@@ -126,8 +126,8 @@ const Blog = () => {
       </div>
 
       {/* Blog Grid */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
+      <section className="section-spacing-tight">
+        <div className="site-container">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold text-navy">
               {activeCategory === 'All' ? 'All Articles' : activeCategory}

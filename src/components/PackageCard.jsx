@@ -78,9 +78,9 @@ const PackageCard = ({ tour, delay = 0 }) => {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full flex items-center justify-center space-x-2 bg-skyblue text-white py-3 rounded-xl font-semibold hover:bg-skyblue/90 transition-colors group"
+            className="w-full flex items-center justify-center space-x-2 btn-primary group"
           >
-            <span>View Details</span>
+            <span>Book Now</span>
             <MdArrowForward className="group-hover:translate-x-1 transition-transform" />
           </motion.button>
         </Link>

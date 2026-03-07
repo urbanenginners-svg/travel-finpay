@@ -45,7 +45,7 @@ const Navbar = () => {
           : 'bg-transparent py-3 sm:py-5'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
             <motion.div
@@ -82,7 +82,7 @@ const Navbar = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-skyblue to-teal text-white px-4 py-2 xl:px-6 xl:py-2.5 rounded-lg xl:rounded-xl font-semibold text-sm xl:text-base shadow-md hover:shadow-lg transition-all"
+                className="btn-primary bg-gradient-to-r from-skyblue to-teal px-4 py-2.5 xl:px-6 xl:py-3 rounded-lg xl:rounded-xl shadow-md hover:shadow-lg"
               >
                 Book Now
               </motion.button>
@@ -124,7 +124,7 @@ const Navbar = () => {
                 ))}
 
                 <Link to="/tours" className="block pt-2">
-                  <button className="w-full bg-gradient-to-r from-skyblue to-teal text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all">
+                  <button className="w-full btn-primary bg-gradient-to-r from-skyblue to-teal shadow-md hover:shadow-lg">
                     Book Now
                   </button>
                 </Link>

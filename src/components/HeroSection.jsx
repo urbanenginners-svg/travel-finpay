@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FiSearch, FiArrowRight } from 'react-icons/fi'
-import { MdFlight } from 'react-icons/md'
+import { MdHealthAndSafety } from 'react-icons/md'
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -79,7 +79,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 min-h-full flex items-start pt-15 sm:pt-32 md:items-center md:pt-0 xl:pt-20  pb-20 md:pb-0">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <div className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mt-16 sm:mt-12 md:mt-20 lg:mt-0">
             {/* Animated Badge */}
             <motion.div
@@ -130,22 +130,22 @@ const HeroSection = () => {
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 10px 40px rgba(77, 168, 255, 0.4)" }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full group flex items-center justify-center space-x-2 bg-skyblue text-white px-5 py-3 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all"
+                  className="w-full group flex items-center justify-center space-x-2 btn-primary px-5 py-3 sm:px-6 sm:py-3 lg:px-8 lg:py-4 shadow-lg hover:shadow-2xl"
                 >
                   <FiSearch className="text-lg lg:text-xl" />
-                  <span>Start Exploring</span>
+                  <span>Plan Your Trip</span>
                   <FiArrowRight className="text-lg lg:text-xl group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
 
-              <Link to="/flights" className="w-full sm:w-auto">
+              <Link to="/insurance" className="w-full sm:w-auto">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full group flex items-center justify-center space-x-2 bg-white/20 backdrop-blur-md text-white px-5 py-3 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-semibold border-2 border-white/30 hover:bg-white/30 transition-all"
+                  className="w-full group flex items-center justify-center space-x-2 bg-white/20 backdrop-blur-md text-white px-5 py-3 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-semibold border-2 border-white/30 hover:bg-white/30 transition-all duration-300"
                 >
-                  <MdFlight className="text-lg lg:text-xl" />
-                  <span>Search Flights</span>
+                  <MdHealthAndSafety className="text-lg lg:text-xl" />
+                  <span>Get a Quote</span>
                 </motion.button>
               </Link>
             </motion.div>

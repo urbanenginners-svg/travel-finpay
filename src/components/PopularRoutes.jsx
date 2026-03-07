@@ -4,18 +4,18 @@ import { popularRoutes } from '../data/flightsData'
 
 const PopularRoutes = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="section-spacing-tight bg-white">
+      <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="section-heading-wrap"
         >
-          <h2 className="text-4xl font-bold text-navy mb-4">
+          <h2 className="section-title">
             Popular Flight Routes
           </h2>
-          <p className="text-navy/70 text-lg max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Discover our most traveled destinations with unbeatable prices
           </p>
         </motion.div>

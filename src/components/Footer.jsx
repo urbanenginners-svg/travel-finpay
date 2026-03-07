@@ -32,11 +32,36 @@ const Footer = () => {
 
   return (
     <footer className="bg-navy text-white mt-auto">
+      <div className="border-b border-white/10">
+        <div className="site-container py-8 md:py-10">
+          <div className="rounded-3xl bg-gradient-to-r from-skyblue/20 via-teal/20 to-skyblue/20 border border-white/20 p-6 md:p-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-5 md:gap-6">
+              <div className="text-center lg:text-left">
+                <h3 className="text-2xl md:text-3xl font-bold text-white">Ready for Your Next Journey?</h3>
+                <p className="text-white/75 mt-2 text-sm md:text-base">Choose your next step and get started in seconds.</p>
+              </div>
+
+              <div className="w-full lg:w-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+                <Link to="/tours" className="w-full sm:w-auto">
+                  <button className="w-full btn-primary">Book Now</button>
+                </Link>
+                <Link to="/itinerary" className="w-full sm:w-auto">
+                  <button className="w-full btn-secondary">Plan Your Trip</button>
+                </Link>
+                <Link to="/insurance" className="w-full sm:w-auto">
+                  <button className="w-full btn-outline border-white/70 text-white hover:bg-white hover:text-navy">Get a Quote</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Newsletter Section */}
       {/* <NewsletterSection compact /> */}
 
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="site-container py-12 md:py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
@@ -48,7 +73,7 @@ const Footer = () => {
                 Fin <span className="text-skyblue">Yourtrip</span>
               </span>
             </Link>
-            <p className="text-white/70 mb-4 leading-relaxed">
+            <p className="text-white/70 text-sm md:text-base mb-4 leading-relaxed">
               Your trusted partner for unforgettable travel experiences. 
               We offer the best flight deals, curated tour packages, and 
               comprehensive travel insurance.

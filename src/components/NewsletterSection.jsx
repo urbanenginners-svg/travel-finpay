@@ -10,11 +10,11 @@ const NewsletterSection = ({ compact = false }) => {
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-teal/30 to-skyblue/30 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-skyblue/20 to-teal/20 rounded-full blur-3xl animate-float-slower" />
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="site-container relative z-10">
           <div className="max-w-3xl mx-auto">
             <div className="backdrop-blur-xl bg-white/20 rounded-3xl p-8 border border-white/30 shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
               {/* Heading */}
-              <h3 className="text-3xl font-bold text-white text-center mb-3">
+              <h3 className="text-3xl md:text-4xl text-white text-center mb-3">
                 Subscribe to Our Newsletter
               </h3>
 
@@ -58,7 +58,7 @@ const NewsletterSection = ({ compact = false }) => {
 
   // Full version for standalone sections
   return (
-    <section className="py-20 bg-gradient-to-br from-skyblue via-teal/80 to-skyblue/60 relative overflow-hidden">
+    <section className="section-spacing bg-gradient-to-br from-skyblue via-teal/80 to-skyblue/60 relative overflow-hidden">
       {/* Floating Gradient Blobs */}
       <div className="absolute top-0 left-0 w-125 h-125 bg-linear-to-br from-teal/40 to-skyblue/40 rounded-full blur-3xl animate-float-slow" />
       <div className="absolute bottom-0 right-0 w-150 h-150 bg-linear-to-tl from-skyblue/30 to-teal/30 rounded-full blur-3xl animate-float-slower" />
@@ -75,7 +75,7 @@ const NewsletterSection = ({ compact = false }) => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="site-container relative z-10">
         {/* Newsletter Card */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}

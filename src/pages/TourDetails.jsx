@@ -26,7 +26,7 @@ const TourDetails = () => {
       className="min-h-screen bg-pearl pt-20"
     >
       {/* Back Button */}
-      <div className="container mx-auto px-4 py-6">
+      <div className="site-container py-6">
         <Link to="/tours">
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -39,7 +39,7 @@ const TourDetails = () => {
       </div>
 
       {/* Hero Image Gallery */}
-      <div className="container mx-auto px-4">
+      <div className="site-container">
         <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-xl">
           <img 
             src={tour.image} 
@@ -48,7 +48,7 @@ const TourDetails = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent" />
           <div className="absolute bottom-8 left-8 text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-2">{tour.title}</h1>
+            <h1 className="page-title text-white mb-2">{tour.title}</h1>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-1">
                 <FiMapPin className="text-gold" />
@@ -69,7 +69,7 @@ const TourDetails = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="site-container py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Details */}
           <div className="lg:col-span-2">
@@ -220,14 +220,14 @@ const TourDetails = () => {
                   </label>
                   <input
                     type="date"
-                    className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                    className="form-control"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-navy mb-2">
                     Number of Travelers
                   </label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none">
+                  <select className="form-select">
                     <option>1 Person</option>
                     <option>2 People</option>
                     <option>3 People</option>
