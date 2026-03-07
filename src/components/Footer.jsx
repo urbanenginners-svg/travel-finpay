@@ -154,7 +154,7 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/70 text-sm">
-              © {currentYear} Fin Yourtrip. All rights reserved.
+              © {currentYear} finyourtrip. All rights reserved.
             </p>
             
             {/* Social Media */}

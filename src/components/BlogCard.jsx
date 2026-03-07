@@ -10,10 +10,10 @@ const BlogCard = ({ blog, delay = 0 }) => {
       viewport={{ once: true }}
       transition={{ delay }}
       whileHover={{ y: -8 }}
-      className="glass-card overflow-hidden group"
+      className="glass-card overflow-hidden group flex flex-col h-full"
     >
       {/* Image */}
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-56 overflow-hidden flex-shrink-0">
         <img 
           src={blog.image} 
           alt={blog.title}
@@ -30,7 +30,7 @@ const BlogCard = ({ blog, delay = 0 }) => {
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         {/* Meta Info */}
         <div className="flex items-center justify-between text-sm text-navy/60 mb-3">
           <div className="flex items-center space-x-1">
@@ -88,16 +88,18 @@ const BlogCard = ({ blog, delay = 0 }) => {
           ))}
         </div>
 
-        {/* Read More Link */}
-        <Link to={`/blog/${blog.slug}`}>
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            className="flex items-center space-x-2 text-skyblue font-semibold text-sm group"
-          >
-            <span>Read More</span>
-            <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-          </motion.button>
-        </Link>
+        {/* Read More Link - pushes to bottom with mt-auto */}
+        <div className="mt-auto">
+          <Link to={`/blog/${blog.slug}`}>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              className="flex items-center space-x-2 text-skyblue font-semibold text-sm group"
+            >
+              <span>Read More</span>
+              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </motion.button>
+          </Link>
+        </div>
       </div>
     </motion.div>
   )

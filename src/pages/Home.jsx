@@ -123,7 +123,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <h2 className="section-title-light mb-6">
-                Why Choose Fin Yourtrip?
+                Why Choose finyourtrip?
               </h2>
               <p className="text-white/80 text-base md:text-lg mb-8 leading-relaxed">
                 We're not just a travel company – we're your trusted partner in creating 
@@ -196,9 +196,9 @@ const Home = () => {
                   whileHover={{ scale: 1.05 }}
                   className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center"
                 >
-                  <div className="text-4xl mb-2 text-gold">{stat.icon}</div>
-                  <div className="text-4xl font-bold mb-2 text-gold">{stat.number}</div>
-                  <div className="text-white/80">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl mb-2 text-gold">{stat.icon}</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 text-gold">{stat.number}</div>
+                  <div className="text-sm md:text-base text-white/80">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -324,7 +324,7 @@ const Home = () => {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed"
               >
-                Join thousands of happy travelers who trust Fin Yourtrip for their dream vacations. 
+                Join thousands of happy travelers who trust finyourtrip for their dream vacations. 
                 Discover extraordinary destinations and create memories that last a lifetime.
               </motion.p>
 
