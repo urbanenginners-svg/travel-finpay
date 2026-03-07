@@ -59,7 +59,7 @@ export const blogsData = [
     date: "February 8, 2026",
     category: "Destination Guide",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1589197331516-5c5d0f2e5f79?w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1576158831003-d41033ec31fd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1hbGRpdmVzfGVufDB8fDB8fHww",
     excerpt: "Plan your perfect Maldives vacation with our comprehensive guide to weather, prices, and activities.",
     content: `The Maldives is a year-round destination, but timing your visit right can make all the difference...`,
     featured: true,

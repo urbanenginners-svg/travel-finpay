@@ -12,7 +12,7 @@ const SearchWidget = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.2 }}
-      className="relative z-20 -mt-20 mx-auto max-w-6xl px-4"
+      className="relative z-20 -mt-5 mx-auto max-w-6xl px-4"
     >
       <div className="glass-card p-8">
         {/* Tabs */}
