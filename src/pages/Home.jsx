@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import HeroSection from '../components/HeroSection'
-import SearchWidget from '../components/SearchWidget'
 import PackageCard from '../components/PackageCard'
 import BlogCard from '../components/BlogCard'
 import PopularRoutes from '../components/PopularRoutes'
@@ -58,9 +57,6 @@ const Home = () => {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       {/* Hero Section */}
       <HeroSection />
-
-      {/* Search Widget */}
-      <SearchWidget />
 
       {/* Featured Destinations Section */}
       <section className="section-spacing bg-pearl">
@@ -349,9 +345,9 @@ const Home = () => {
                 
                 <Link to="/community">
                   <motion.button
-                    whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+                    whileHover={{ scale: 1.05, y: -1 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center space-x-2 backdrop-blur-md bg-white/20 text-white px-8 py-4 rounded-full font-semibold border-2 border-white/40 hover:border-white/60 transition-all duration-300 shadow-lg"
+                    className="inline-flex items-center space-x-2 bg-white text-navy px-8 py-4 rounded-full font-semibold border border-white/80 hover:bg-pearl transition-all duration-300 shadow-[0_10px_30px_rgba(15,23,42,0.22)]"
                   >
                     <span>Join Community</span>
                     <FiUsers />
@@ -421,11 +417,11 @@ const Home = () => {
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <div className="relative flex-1">
-                  <FiUsers className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 text-xl" />
+                  <FiUsers className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/45 text-xl" />
                   <input
                     type="email"
                     placeholder="Enter your email address"
-                    className="w-full pl-12 pr-6 py-4 bg-white/30 backdrop-blur-md rounded-full border border-white/40 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal/50 transition-all"
+                    className="w-full pl-12 pr-6 py-4 bg-white/95 rounded-full border border-white/90 text-navy placeholder-navy/45 shadow-[0_8px_24px_rgba(15,23,42,0.12)] focus:outline-none focus:ring-2 focus:ring-skyblue/45 focus:border-skyblue/50 transition-all"
                   />
                 </div>
                 

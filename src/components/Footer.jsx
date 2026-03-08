@@ -1,10 +1,18 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 import { MdFlight, MdEmail, MdPhone, MdLocationOn } from 'react-icons/md'
 // import NewsletterSection from './NewsletterSection'
 
 const Footer = () => {
+  const { pathname } = useLocation()
   const currentYear = new Date().getFullYear()
+  const shouldShowJourneyCta = [
+    /^\/$/,
+    /^\/tours(?:\/\d+)?$/,
+    /^\/flights$/,
+    /^\/insurance$/,
+    /^\/itinerary$/
+  ].some((pattern) => pattern.test(pathname))
 
   const quickLinks = [
     { label: 'About Us', path: '/' },
@@ -32,30 +40,32 @@ const Footer = () => {
 
   return (
     <footer className="bg-navy text-white mt-auto">
-      <div className="border-b border-white/10">
-        <div className="site-container py-8 md:py-10">
-          <div className="rounded-3xl bg-gradient-to-r from-skyblue/20 via-teal/20 to-skyblue/20 border border-white/20 p-6 md:p-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-5 md:gap-6">
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl md:text-3xl font-bold text-white">Ready for Your Next Journey?</h3>
-                <p className="text-white/75 mt-2 text-sm md:text-base">Choose your next step and get started in seconds.</p>
-              </div>
+      {shouldShowJourneyCta && (
+        <div className="border-b border-white/10">
+          <div className="site-container py-8 md:py-10">
+            <div className="rounded-3xl bg-gradient-to-r from-skyblue/20 via-teal/20 to-skyblue/20 border border-white/20 p-6 md:p-8">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-5 md:gap-6">
+                <div className="text-center lg:text-left">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">Ready for Your Next Journey?</h3>
+                  <p className="text-white/75 mt-2 text-sm md:text-base">Choose your next step and get started in seconds.</p>
+                </div>
 
-              <div className="w-full lg:w-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-                <Link to="/tours" className="w-full sm:w-auto">
-                  <button className="w-full btn-primary">Book Now</button>
-                </Link>
-                <Link to="/itinerary" className="w-full sm:w-auto">
-                  <button className="w-full btn-secondary">Plan Your Trip</button>
-                </Link>
-                <Link to="/insurance" className="w-full sm:w-auto">
-                  <button className="w-full btn-outline border-white/70 text-white hover:bg-white hover:text-navy">Get a Quote</button>
-                </Link>
+                <div className="w-full lg:w-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+                  <Link to="/tours" className="w-full sm:w-auto">
+                    <button className="w-full btn-primary">Book Now</button>
+                  </Link>
+                  <Link to="/itinerary" className="w-full sm:w-auto">
+                    <button className="w-full btn-secondary">Plan Your Trip</button>
+                  </Link>
+                  <Link to="/insurance" className="w-full sm:w-auto">
+                    <button className="w-full btn-outline border-white/70 text-white hover:bg-white hover:text-navy">Get a Quote</button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Newsletter Section */}
       {/* <NewsletterSection compact /> */}

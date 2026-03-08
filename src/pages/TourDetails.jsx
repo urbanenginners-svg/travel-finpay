@@ -40,16 +40,16 @@ const TourDetails = () => {
 
       {/* Hero Image Gallery */}
       <div className="site-container">
-        <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-xl">
+        <div className="relative h-72 sm:h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-xl">
           <img 
             src={tour.image} 
             alt={tour.title}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent" />
-          <div className="absolute bottom-8 left-8 text-white">
-            <h1 className="page-title text-white mb-2">{tour.title}</h1>
-            <div className="flex items-center space-x-4">
+          <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 text-white">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-2 break-words">{tour.title}</h1>
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm sm:text-base">
               <div className="flex items-center space-x-1">
                 <FiMapPin className="text-gold" />
                 <span>{tour.destination}</span>
@@ -61,7 +61,7 @@ const TourDetails = () => {
             </div>
           </div>
           {tour.featured && (
-            <div className="absolute top-8 right-8 bg-gold text-navy px-4 py-2 rounded-full font-semibold">
+            <div className="absolute top-4 sm:top-8 right-4 sm:right-8 bg-gold text-navy px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold">
               Featured Tour
             </div>
           )}
@@ -74,12 +74,12 @@ const TourDetails = () => {
           {/* Left Column - Details */}
           <div className="lg:col-span-2">
             {/* Tabs */}
-            <div className="flex space-x-2 mb-6 border-b border-navy/10">
+            <div className="flex space-x-1 sm:space-x-2 mb-6 border-b border-navy/10 overflow-x-auto pb-2">
               {['overview', 'itinerary', 'inclusions'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-3 font-semibold capitalize transition-colors ${
+                  className={`px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-semibold capitalize whitespace-nowrap transition-colors ${
                     activeTab === tab
                       ? 'text-skyblue border-b-2 border-skyblue'
                       : 'text-navy/60 hover:text-navy'
@@ -95,7 +95,7 @@ const TourDetails = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="glass-card p-8"
+                className="glass-card p-5 sm:p-8"
               >
                 <h2 className="text-2xl font-bold text-navy mb-4">Tour Overview</h2>
                 <p className="text-navy/70 mb-6 leading-relaxed">{tour.description}</p>
@@ -110,24 +110,24 @@ const TourDetails = () => {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="text-center p-4 bg-skyblue/10 rounded-xl">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                  <div className="text-center p-3 sm:p-4 bg-skyblue/10 rounded-xl">
                     <FiClock className="text-2xl text-skyblue mx-auto mb-2" />
                     <div className="text-sm text-navy/60">Duration</div>
-                    <div className="font-semibold text-navy">{tour.duration}</div>
+                    <div className="font-semibold text-navy text-sm sm:text-base break-words">{tour.duration}</div>
                   </div>
-                  <div className="text-center p-4 bg-teal/10 rounded-xl">
+                  <div className="text-center p-3 sm:p-4 bg-teal/10 rounded-xl">
                     <FiMapPin className="text-2xl text-teal mx-auto mb-2" />
                     <div className="text-sm text-navy/60">Location</div>
-                    <div className="font-semibold text-navy">{tour.destination}</div>
+                    <div className="font-semibold text-navy text-sm sm:text-base break-words">{tour.destination}</div>
                   </div>
-                  <div className="text-center p-4 bg-gold/10 rounded-xl">
+                  <div className="text-center p-3 sm:p-4 bg-gold/10 rounded-xl">
                     <FiStar className="text-2xl text-gold mx-auto mb-2" />
                     <div className="text-sm text-navy/60">Rating</div>
                     <div className="font-semibold text-navy">{tour.rating}/5</div>
                   </div>
-                  <div className="text-center p-4 bg-navy/10 rounded-xl">
-                    <span className="text-2xl font-bold text-navy mx-auto mb-2 block">${tour.price}</span>
+                  <div className="text-center p-3 sm:p-4 bg-navy/10 rounded-xl">
+                    <span className="text-xl sm:text-2xl font-bold text-navy mx-auto mb-2 block">${tour.price}</span>
                     <div className="text-sm text-navy/60">Per Person</div>
                   </div>
                 </div>
@@ -139,19 +139,19 @@ const TourDetails = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="glass-card p-8"
+                className="glass-card p-5 sm:p-8"
               >
                 <h2 className="text-2xl font-bold text-navy mb-6">Detailed Itinerary</h2>
                 <div className="space-y-6">
                   {tour.itinerary.map((day) => (
-                    <div key={day.day} className="flex space-x-4">
+                    <div key={day.day} className="flex space-x-3 sm:space-x-4">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-skyblue to-teal text-white flex items-center justify-center font-bold">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-skyblue to-teal text-white flex items-center justify-center text-sm sm:text-base font-bold">
                           {day.day}
                         </div>
                       </div>
-                      <div className="flex-1 pb-6 border-b border-navy/10 last:border-0">
-                        <h3 className="text-lg font-bold text-navy mb-2">
+                      <div className="flex-1 min-w-0 pb-6 border-b border-navy/10 last:border-0">
+                        <h3 className="text-base sm:text-lg font-bold text-navy mb-2 break-words">
                           Day {day.day}: {day.title}
                         </h3>
                         <p className="text-navy/70">{day.description}</p>
@@ -167,7 +167,7 @@ const TourDetails = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="glass-card p-8"
+                className="glass-card p-5 sm:p-8"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
@@ -201,9 +201,9 @@ const TourDetails = () => {
           <div className="lg:col-span-1">
             <div className="glass-card p-6 sticky top-24">
               <div className="mb-6">
-                <div className="text-3xl font-bold text-navy mb-2">
+                <div className="text-2xl sm:text-3xl font-bold text-navy mb-2">
                   ${tour.price}
-                  <span className="text-lg font-normal text-navy/60"> / person</span>
+                  <span className="text-base sm:text-lg font-normal text-navy/60"> / person</span>
                 </div>
                 <div className="flex items-center space-x-1 text-sm">
                   <FiStar className="text-gold fill-gold" />

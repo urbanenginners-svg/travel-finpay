@@ -33,7 +33,7 @@ const Flights = () => {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="page-title"
+            className="text-3xl sm:text-4xl md:text-5xl mb-4"
           >
             Search Flights
           </motion.h1>
@@ -56,7 +56,7 @@ const Flights = () => {
       {/* Filters & Results */}
       <div className="site-container py-12 md:py-16">
         {/* Filter Toggle & Sort */}
-        <div className="flex items-center justify-between mb-6 glass-card p-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 glass-card p-4 gap-4">
           <button
             onClick={() => setShowFilters(!showFilters)}
             className="flex items-center space-x-2 text-navy font-medium hover:text-skyblue transition-colors"
@@ -65,11 +65,11 @@ const Flights = () => {
             <span>{showFilters ? 'Hide Filters' : 'Show Filters'}</span>
           </button>
           
-          <div className="flex items-center space-x-4">
-            <span className="text-navy/70">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
+            <span className="text-sm sm:text-base text-navy/70">
               <span className="font-semibold text-navy">{flightsData.length}</span> flights found
             </span>
-            <select className="form-select max-w-[220px]">
+            <select className="form-select w-full sm:w-auto sm:max-w-[220px]">
               <option>Best Match</option>
               <option>Cheapest First</option>
               <option>Shortest Duration</option>
