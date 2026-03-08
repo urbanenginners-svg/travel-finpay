@@ -28,11 +28,11 @@ const Tours = () => {
     >
       {/* Header */}
       <div className="bg-gradient-to-r from-navy to-skyblue text-white py-20 pt-32">
-        <div className="container mx-auto px-4">
+        <div className="site-container">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold mb-4"
+            className="page-title"
           >
             Explore Tour Packages
           </motion.h1>
@@ -40,7 +40,7 @@ const Tours = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/90"
+            className="page-lead"
           >
             Discover handpicked destinations and create unforgettable memories
           </motion.p>
@@ -49,14 +49,14 @@ const Tours = () => {
 
       {/* Category Filters */}
       <div className="bg-white shadow-soft py-4 sticky top-20 z-40">
-        <div className="container mx-auto px-4">
+        <div className="site-container">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2 overflow-x-auto pb-2 flex-1">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => handleCategoryChange(category)}
-                  className={`px-6 py-2 rounded-xl font-medium whitespace-nowrap transition-all ${
+                  className={`chip-button ${
                     activeCategory === category
                       ? 'bg-skyblue text-white shadow-lg'
                       : 'bg-pearl text-navy hover:bg-skyblue/10'
@@ -91,7 +91,7 @@ const Tours = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="site-container py-12 md:py-16">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filters Sidebar */}
           <div className="lg:w-1/4">
@@ -104,7 +104,7 @@ const Tours = () => {
               <p className="text-navy/70">
                 Showing <span className="font-semibold text-navy">{displayedTours.length}</span> tours
               </p>
-              <select className="px-4 py-2 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none">
+              <select className="form-select max-w-[220px]">
                 <option>Sort by: Popular</option>
                 <option>Price: Low to High</option>
                 <option>Price: High to Low</option>

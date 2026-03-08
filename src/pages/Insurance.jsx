@@ -17,14 +17,14 @@ const Insurance = () => {
     >
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-navy to-skyblue text-white py-20 pt-32">
-        <div className="container mx-auto px-4">
+        <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-5xl font-bold mb-6">Travel with Confidence</h1>
-            <p className="text-xl text-white/90 mb-8">
+            <h1 className="page-title mb-6">Travel with Confidence</h1>
+            <p className="page-lead mb-8">
               Comprehensive travel insurance plans to protect your journey, 
               from unexpected medical expenses to trip cancellations.
             </p>
@@ -33,18 +33,18 @@ const Insurance = () => {
       </div>
 
       {/* Insurance Plans */}
-      <section className="py-20 bg-pearl">
-        <div className="container mx-auto px-4">
+      <section className="section-spacing bg-pearl">
+        <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="section-heading-wrap"
           >
-            <h2 className="text-4xl font-bold text-navy mb-4">
+            <h2 className="section-title">
               Choose Your Protection Plan
             </h2>
-            <p className="text-navy/70 text-lg max-w-2xl mx-auto">
+            <p className="section-subtitle">
               Select the coverage that best fits your travel needs
             </p>
           </motion.div>
@@ -58,8 +58,8 @@ const Insurance = () => {
       </section>
 
       {/* Quick Quote Form */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="section-spacing bg-white">
+        <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,14 +79,14 @@ const Insurance = () => {
                   <input
                     type="text"
                     placeholder="Where are you traveling?"
-                    className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                    className="form-control"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-navy mb-2">
                     Trip Duration
                   </label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none">
+                  <select className="form-select">
                     <option>1-7 days</option>
                     <option>8-14 days</option>
                     <option>15-30 days</option>
@@ -99,14 +99,14 @@ const Insurance = () => {
                   </label>
                   <input
                     type="date"
-                    className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                    className="form-control"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-navy mb-2">
                     Number of Travelers
                   </label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none">
+                  <select className="form-select">
                     <option>1 Person</option>
                     <option>2 People</option>
                     <option>Family (3+)</option>
@@ -127,18 +127,18 @@ const Insurance = () => {
       </section>
 
       {/* Claims Process */}
-      <section className="py-20 bg-pearl">
-        <div className="container mx-auto px-4">
+      <section className="section-spacing bg-pearl">
+        <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="section-heading-wrap"
           >
-            <h2 className="text-4xl font-bold text-navy mb-4">
+            <h2 className="section-title">
               Simple Claims Process
             </h2>
-            <p className="text-navy/70 text-lg max-w-2xl mx-auto">
+            <p className="section-subtitle">
               Filing a claim is easy and straightforward
             </p>
           </motion.div>
@@ -170,18 +170,18 @@ const Insurance = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="section-spacing bg-white">
+        <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="section-heading-wrap"
           >
-            <h2 className="text-4xl font-bold text-navy mb-4">
+            <h2 className="section-title">
               Frequently Asked Questions
             </h2>
-            <p className="text-navy/70 text-lg max-w-2xl mx-auto">
+            <p className="section-subtitle">
               Got questions? We've got answers
             </p>
           </motion.div>
@@ -220,16 +220,16 @@ const Insurance = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-r from-skyblue to-teal text-white">
-        <div className="container mx-auto px-4">
+      <section className="section-spacing bg-gradient-to-r from-skyblue to-teal text-white">
+        <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="section-heading-wrap"
           >
-            <h2 className="text-4xl font-bold mb-4">Need Help Choosing?</h2>
-            <p className="text-xl text-white/90 mb-8">
+            <h2 className="section-title-light">Need Help Choosing?</h2>
+            <p className="section-subtitle-light mb-8">
               Our insurance experts are here to assist you 24/7
             </p>
           </motion.div>

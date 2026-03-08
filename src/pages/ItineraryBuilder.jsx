@@ -56,11 +56,11 @@ const ItineraryBuilder = () => {
     >
       {/* Header */}
       <div className="bg-gradient-to-r from-gold to-teal text-white py-20 pt-32">
-        <div className="container mx-auto px-4">
+        <div className="site-container">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold mb-4"
+            className="page-title"
           >
             Itinerary Builder
           </motion.h1>
@@ -68,14 +68,14 @@ const ItineraryBuilder = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/90"
+            className="page-lead"
           >
             Create your perfect travel plan with our customizable itinerary tool
           </motion.p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="site-container py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Customization Form */}
           <div className="lg:col-span-1">
@@ -91,7 +91,7 @@ const ItineraryBuilder = () => {
                   <input
                     type="text"
                     placeholder="Where to?"
-                    className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                    className="form-control"
                   />
                 </div>
 
@@ -102,7 +102,7 @@ const ItineraryBuilder = () => {
                   </label>
                   <input
                     type="date"
-                    className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                    className="form-control"
                   />
                 </div>
 
@@ -114,7 +114,7 @@ const ItineraryBuilder = () => {
                     type="number"
                     min="1"
                     defaultValue="7"
-                    className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                    className="form-control"
                   />
                 </div>
 
@@ -123,7 +123,7 @@ const ItineraryBuilder = () => {
                     <FiDollarSign className="inline mr-2" />
                     Budget
                   </label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none">
+                  <select className="form-select">
                     <option>Under ₹1,000</option>
                     <option>₹1,000 - ₹2,500</option>
                     <option>₹2,500 - ₹5,000</option>
@@ -135,7 +135,7 @@ const ItineraryBuilder = () => {
                   <label className="block text-sm font-medium text-navy mb-2">
                     Travel Style
                   </label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none">
+                  <select className="form-select">
                     <option>Relaxation</option>
                     <option>Adventure</option>
                     <option>Cultural</option>
@@ -240,12 +240,12 @@ const ItineraryBuilder = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="section-heading-wrap"
           >
-            <h2 className="text-4xl font-bold text-navy mb-4">
+            <h2 className="section-title">
               Sample Itineraries
             </h2>
-            <p className="text-navy/70 text-lg">
+            <p className="section-subtitle max-w-none">
               Get inspired by our pre-built travel plans
             </p>
           </motion.div>

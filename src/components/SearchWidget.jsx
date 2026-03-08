@@ -12,9 +12,9 @@ const SearchWidget = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.2 }}
-      className="relative z-20 -mt-20 mx-auto max-w-6xl px-4"
+      className="relative z-20 -mt-5 mx-auto max-w-6xl px-4"
     >
-      <div className="glass-card p-8">
+      <div className="glass-card p-6 md:p-8">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-6">
           {[
@@ -71,7 +71,7 @@ const SearchWidget = () => {
                 <input
                   type="text"
                   placeholder="From"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                  className="form-control-icon"
                 />
               </div>
               <div className="relative">
@@ -79,14 +79,14 @@ const SearchWidget = () => {
                 <input
                   type="text"
                   placeholder="To"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                  className="form-control-icon"
                 />
               </div>
               <div className="relative">
                 <FiCalendar className="absolute left-4 top-1/2 transform -translate-y-1/2 text-navy/60" />
                 <input
                   type="date"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                  className="form-control-icon"
                 />
               </div>
               {tripType === 'roundtrip' && (
@@ -94,7 +94,7 @@ const SearchWidget = () => {
                   <FiCalendar className="absolute left-4 top-1/2 transform -translate-y-1/2 text-navy/60" />
                   <input
                     type="date"
-                    className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                    className="form-control-icon"
                   />
                 </div>
               )}
@@ -103,7 +103,7 @@ const SearchWidget = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="relative">
                 <FiUsers className="absolute left-4 top-1/2 transform -translate-y-1/2 text-navy/60" />
-                <select className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none appearance-none">
+                <select className="form-control-icon appearance-none">
                   <option>1 Traveler</option>
                   <option>2 Travelers</option>
                   <option>3 Travelers</option>
@@ -111,7 +111,7 @@ const SearchWidget = () => {
                 </select>
               </div>
               <div className="relative">
-                <select className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none appearance-none">
+                <select className="form-select">
                   <option>Economy</option>
                   <option>Premium Economy</option>
                   <option>Business</option>
@@ -121,7 +121,7 @@ const SearchWidget = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex items-center justify-center space-x-2 bg-skyblue text-white py-3 rounded-xl font-semibold hover:bg-skyblue/90 transition-colors"
+                className="flex items-center justify-center space-x-2 btn-primary"
               >
                 <FiSearch />
                 <span>Search Flights</span>
@@ -139,7 +139,7 @@ const SearchWidget = () => {
                 <input
                   type="text"
                   placeholder="Destination"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                  className="form-control-icon"
                 />
               </div>
               <div className="relative">
@@ -147,11 +147,11 @@ const SearchWidget = () => {
                 <input
                   type="date"
                   placeholder="Travel Date"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                  className="form-control-icon"
                 />
               </div>
               <div className="relative">
-                <select className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none appearance-none">
+                <select className="form-select">
                   <option>Tour Type</option>
                   <option>Beach</option>
                   <option>Adventure</option>
@@ -163,7 +163,7 @@ const SearchWidget = () => {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full flex items-center justify-center space-x-2 bg-skyblue text-white py-3 rounded-xl font-semibold hover:bg-skyblue/90 transition-colors"
+              className="w-full flex items-center justify-center space-x-2 btn-primary"
             >
               <FiSearch />
               <span>Search Tours</span>
@@ -180,7 +180,7 @@ const SearchWidget = () => {
                 <input
                   type="text"
                   placeholder="Destination Country"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                  className="form-control-icon"
                 />
               </div>
               <div className="relative">
@@ -188,12 +188,12 @@ const SearchWidget = () => {
                 <input
                   type="date"
                   placeholder="Trip Start Date"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                  className="form-control-icon"
                 />
               </div>
               <div className="relative">
                 <FiUsers className="absolute left-4 top-1/2 transform -translate-y-1/2 text-navy/60" />
-                <select className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none appearance-none">
+                <select className="form-control-icon appearance-none">
                   <option>Number of Travelers</option>
                   <option>1 Person</option>
                   <option>2 People</option>
@@ -204,7 +204,7 @@ const SearchWidget = () => {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full flex items-center justify-center space-x-2 bg-skyblue text-white py-3 rounded-xl font-semibold hover:bg-skyblue/90 transition-colors"
+              className="w-full flex items-center justify-center space-x-2 btn-primary"
             >
               <FiSearch />
               <span>Get Insurance Quote</span>

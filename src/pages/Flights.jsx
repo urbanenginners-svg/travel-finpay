@@ -29,11 +29,11 @@ const Flights = () => {
     >
       {/* Header */}
       <div className="bg-gradient-to-br from-purple-600 via-blue-600 to-teal text-white py-16 pt-28">
-        <div className="container mx-auto px-4">
+        <div className="site-container">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold mb-4"
+            className="page-title"
           >
             Search Flights
           </motion.h1>
@@ -41,7 +41,7 @@ const Flights = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/90"
+            className="page-lead"
           >
             Find the best flight deals for your next journey
           </motion.p>
@@ -54,7 +54,7 @@ const Flights = () => {
       </div>
 
       {/* Filters & Results */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="site-container py-12 md:py-16">
         {/* Filter Toggle & Sort */}
         <div className="flex items-center justify-between mb-6 glass-card p-4">
           <button
@@ -69,7 +69,7 @@ const Flights = () => {
             <span className="text-navy/70">
               <span className="font-semibold text-navy">{flightsData.length}</span> flights found
             </span>
-            <select className="px-4 py-2 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none">
+            <select className="form-select max-w-[220px]">
               <option>Best Match</option>
               <option>Cheapest First</option>
               <option>Shortest Duration</option>
@@ -95,7 +95,7 @@ const Flights = () => {
                   <select
                     value={filters.airline}
                     onChange={(e) => setFilters({ ...filters, airline: e.target.value })}
-                    className="w-full px-4 py-2 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none"
+                    className="form-select"
                   >
                     {airlines.map((airline) => (
                       <option key={airline} value={airline}>{airline}</option>

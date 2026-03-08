@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -14,32 +15,123 @@
 }
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
   body {
-    @apply bg-pearl text-navy;
+    @apply bg-pearl text-navy antialiased;
+    font-family: 'Manrope', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Plus Jakarta Sans', 'Manrope', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+    @apply font-bold;
+  }
+
+  p,
+  li,
+  label,
+  button,
+  input,
+  select,
+  textarea {
+    font-family: 'Manrope', ui-sans-serif, system-ui, -apple-system, sans-serif;
   }
 }
 
 @layer components {
+  .site-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-spacing {
+    @apply py-16 md:py-20;
+  }
+
+  .section-spacing-tight {
+    @apply py-12 md:py-16;
+  }
+
+  .section-heading-wrap {
+    @apply text-center mb-10 md:mb-12;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl text-navy mb-3 md:mb-4 leading-tight;
+  }
+
+  .section-title-light {
+    @apply text-3xl md:text-4xl text-white mb-3 md:mb-4 leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-base md:text-lg text-navy/70 max-w-2xl mx-auto leading-relaxed;
+  }
+
+  .section-subtitle-light {
+    @apply text-base md:text-lg text-white/85 max-w-2xl mx-auto leading-relaxed;
+  }
+
+  .page-title {
+    @apply text-4xl md:text-5xl mb-4;
+  }
+
+  .page-lead {
+    @apply text-lg md:text-xl text-white/90 leading-relaxed;
+  }
+
   .glass-card {
     @apply bg-white/70 backdrop-blur-md rounded-2xl shadow-glass;
   }
+
+  .form-control {
+    @apply w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none;
+  }
+
+  .form-control-icon {
+    @apply w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none;
+  }
+
+  .form-select {
+    @apply w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none appearance-none;
+  }
   
   .btn-primary {
-    @apply bg-skyblue text-white px-6 py-3 rounded-xl font-semibold 
+    @apply bg-skyblue text-white px-6 py-3 rounded-xl font-semibold text-sm md:text-base
            hover:bg-skyblue/90 transition-all duration-300 shadow-soft
            hover:shadow-lg hover:-translate-y-0.5;
   }
   
   .btn-secondary {
-    @apply bg-teal text-white px-6 py-3 rounded-xl font-semibold 
+    @apply bg-teal text-white px-6 py-3 rounded-xl font-semibold text-sm md:text-base
            hover:bg-teal/90 transition-all duration-300 shadow-soft
            hover:shadow-lg hover:-translate-y-0.5;
   }
   
   .btn-outline {
-    @apply border-2 border-skyblue text-skyblue px-6 py-3 rounded-xl 
-           font-semibold hover:bg-skyblue hover:text-white 
+    @apply border-2 border-skyblue text-skyblue px-6 py-3 rounded-xl font-semibold text-sm md:text-base
+           hover:bg-skyblue hover:text-white
            transition-all duration-300;
+  }
+
+  .chip-button {
+    @apply px-6 py-2 rounded-xl font-medium whitespace-nowrap transition-all;
   }
 }
 
@@ -91,4 +183,28 @@
 
 .animate-float-slower {
   animation: float-slower 25s ease-in-out infinite;
+}
+
+
+.mobile-menu-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+
+.mobile-menu-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.mobile-menu-scroll::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-radius: 9999px;
+}
+
+.mobile-menu-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.mobile-menu-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }

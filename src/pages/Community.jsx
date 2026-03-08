@@ -96,11 +96,11 @@ const Community = () => {
     >
       {/* Header */}
       <div className="bg-gradient-to-r from-navy to-teal text-white py-20 pt-32">
-        <div className="container mx-auto px-4">
+        <div className="site-container">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold mb-4"
+            className="page-title"
           >
             Travel Community
           </motion.h1>
@@ -108,14 +108,14 @@ const Community = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/90"
+            className="page-lead"
           >
             Connect with fellow travelers, share experiences, and get advice
           </motion.p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="site-container py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
@@ -125,10 +125,10 @@ const Community = () => {
               <textarea
                 placeholder="Share your travel questions or experiences..."
                 rows="3"
-                className="w-full px-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none resize-none mb-4"
+                className="form-control resize-none mb-4"
               ></textarea>
               <div className="flex items-center justify-between">
-                <select className="px-4 py-2 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none">
+                <select className="form-select max-w-[220px]">
                   <option>Select Category</option>
                   <option>Travel Tips</option>
                   <option>Destination Advice</option>
@@ -282,8 +282,8 @@ const Community = () => {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-4xl font-bold text-navy mb-4">Recent Reviews</h2>
-            <p className="text-navy/70 text-lg">See what our community is saying about their travels</p>
+            <h2 className="section-title text-left mb-4">Recent Reviews</h2>
+            <p className="text-navy/70 text-base md:text-lg leading-relaxed">See what our community is saying about their travels</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

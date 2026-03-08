@@ -62,20 +62,20 @@ const Home = () => {
       {/* Search Widget */}
       <SearchWidget />
 
-      {/* Featured Tours Section */}
-      <section className="py-20 bg-pearl">
-        <div className="container mx-auto px-4">
+      {/* Featured Destinations Section */}
+      <section className="section-spacing bg-pearl">
+        <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="section-heading-wrap"
           >
-            <h2 className="text-4xl font-bold text-navy mb-4">
-              Featured Tour Packages
+            <h2 className="section-title">
+              Featured Destinations
             </h2>
-            <p className="text-navy/70 text-lg max-w-2xl mx-auto">
-              Handpicked destinations for unforgettable experiences
+            <p className="section-subtitle">
+              Curated escapes selected for unforgettable travel experiences
             </p>
           </motion.div>
 
@@ -109,12 +109,12 @@ const Home = () => {
       <PopularRoutes />
 
       {/* About Section */}
-      <section className="py-20 bg-gradient-to-br from-navy to-navy/90 text-white relative overflow-hidden">
+      <section className="section-spacing bg-gradient-to-br from-navy to-navy/90 text-white relative overflow-hidden">
         {/* Decorative Blobs */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-skyblue/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal/20 rounded-full blur-3xl" />
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="site-container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <motion.div
@@ -122,10 +122,10 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold mb-6">
-                Why Choose Fin Yourtrip?
+              <h2 className="section-title-light mb-6">
+                Why Choose finyourtrip?
               </h2>
-              <p className="text-white/80 text-lg mb-8 leading-relaxed">
+              <p className="text-white/80 text-base md:text-lg mb-8 leading-relaxed">
                 We're not just a travel company – we're your trusted partner in creating 
                 extraordinary journeys. From the moment you start planning to the day you 
                 return home, we're with you every step of the way.
@@ -196,9 +196,9 @@ const Home = () => {
                   whileHover={{ scale: 1.05 }}
                   className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center"
                 >
-                  <div className="text-4xl mb-2 text-gold">{stat.icon}</div>
-                  <div className="text-4xl font-bold mb-2 text-gold">{stat.number}</div>
-                  <div className="text-white/80">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl mb-2 text-gold">{stat.icon}</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 text-gold">{stat.number}</div>
+                  <div className="text-sm md:text-base text-white/80">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -227,18 +227,18 @@ const Home = () => {
       </section>
 
       {/* Featured Blog Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="section-spacing bg-white">
+        <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="section-heading-wrap"
           >
-            <h2 className="text-4xl font-bold text-navy mb-4">
+            <h2 className="section-title">
               Travel Inspiration & Tips
             </h2>
-            <p className="text-navy/70 text-lg max-w-2xl mx-auto">
+            <p className="section-subtitle">
               Expert advice, destination guides, and inspiring stories
             </p>
           </motion.div>
@@ -253,7 +253,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
           >
             <Link to="/blog">
               <motion.button
@@ -265,12 +265,14 @@ const Home = () => {
                 <FiArrowRight />
               </motion.button>
             </Link>
+
+  
           </motion.div>
         </div>
       </section>
 
       {/* CTA + Newsletter Section */}
-      <section className="py-28 bg-gradient-to-br from-skyblue via-teal/80 to-skyblue/60 relative overflow-hidden">
+      <section className="py-24 md:py-28 bg-gradient-to-br from-skyblue via-teal/80 to-skyblue/60 relative overflow-hidden">
         {/* Floating Gradient Blobs */}
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-teal/40 to-skyblue/40 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-skyblue/30 to-teal/30 rounded-full blur-3xl animate-float-slower" />
@@ -287,7 +289,7 @@ const Home = () => {
           </svg>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="site-container relative z-10">
           {/* Top CTA Area */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -322,7 +324,7 @@ const Home = () => {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed"
               >
-                Join thousands of happy travelers who trust Fin Yourtrip for their dream vacations. 
+                Join thousands of happy travelers who trust finyourtrip for their dream vacations. 
                 Discover extraordinary destinations and create memories that last a lifetime.
               </motion.p>
 

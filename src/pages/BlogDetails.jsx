@@ -26,7 +26,7 @@ const BlogDetails = () => {
       className="min-h-screen bg-pearl pt-20"
     >
       {/* Back Button */}
-      <div className="container mx-auto px-4 py-6">
+      <div className="site-container py-6">
         <Link to="/blog">
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -39,13 +39,13 @@ const BlogDetails = () => {
       </div>
 
       {/* Article Header */}
-      <div className="container mx-auto px-4 pb-8">
+      <div className="site-container pb-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
             <span className="inline-block bg-teal text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">
               {blog.category}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-navy mb-6">
+            <h1 className="page-title text-navy mb-6">
               {blog.title}
             </h1>
           </div>
@@ -159,18 +159,18 @@ const BlogDetails = () => {
       </div>
 
       {/* Related Articles */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="section-spacing bg-white">
+        <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="section-heading-wrap"
           >
-            <h2 className="text-4xl font-bold text-navy mb-4">
+            <h2 className="section-title">
               Related Articles
             </h2>
-            <p className="text-navy/70 text-lg">
+            <p className="section-subtitle max-w-none">
               Continue exploring travel inspiration
             </p>
           </motion.div>

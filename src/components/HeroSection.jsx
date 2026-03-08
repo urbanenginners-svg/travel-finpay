@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FiSearch, FiArrowRight } from 'react-icons/fi'
-import { MdFlight } from 'react-icons/md'
+import { MdHealthAndSafety } from 'react-icons/md'
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -30,7 +30,7 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative md:min-h-screen md:h-screen w-full overflow-hidden">
       {/* Background Image Slider */}
       {heroImages.map((image, index) => (
         <motion.div
@@ -50,7 +50,7 @@ const HeroSection = () => {
       {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/50 to-transparent" />
 
-      {/* Floating Animated Blobs */}
+      {/* Floating Animated Blobs - Responsive Sizes */}
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
@@ -61,7 +61,7 @@ const HeroSection = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-20 right-20 w-96 h-96 bg-skyblue/30 rounded-full blur-3xl"
+        className="absolute top-10 -right-10 w-64 h-64 md:w-80 md:h-80 lg:top-20 lg:right-10 xl:w-96 xl:h-96 xl:right-20 bg-skyblue/30 rounded-full blur-3xl"
       />
       <motion.div
         animate={{
@@ -74,88 +74,88 @@ const HeroSection = () => {
           ease: "easeInOut",
           delay: 1
         }}
-        className="absolute bottom-20 left-20 w-96 h-96 bg-teal/30 rounded-full blur-3xl"
+        className="absolute bottom-10 -left-10 w-64 h-64 md:w-80 md:h-80 lg:bottom-20 lg:left-10 xl:w-96 xl:h-96 xl:left-20 bg-teal/30 rounded-full blur-3xl"
       />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl">
+      <div className="relative z-10 min-h-full flex items-start pt-15 sm:pt-32 md:items-center md:pt-0 xl:pt-20  pb-20 md:pb-0">
+        <div className="site-container">
+          <div className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mt-16 sm:mt-12 md:mt-20 lg:mt-0">
             {/* Animated Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full mb-6"
+              className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-4 sm:mb-6 sm:mt-8"
             >
               <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-              <span className="text-white text-sm font-medium">
+              <span className="text-white text-xs sm:text-sm font-medium ">
                 Trusted by 10,000+ Happy Travelers
               </span>
             </motion.div>
 
-            {/* Main Headline */}
+            {/* Main Headline - Better Responsive Scaling */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
             >
               Explore the World with{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-skyblue via-teal to-gold">
-                Fin Yourtrip
+                finyourtrip
               </span>
             </motion.h1>
 
-            {/* Subtext */}
+            {/* Subtext - Better Responsive Scaling */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 mb-6 sm:mb-8 leading-relaxed"
             >
               Flights, Tours & Travel Insurance — All in One Smart Platform.
-              <br />
-              Your journey to unforgettable adventures starts here.
+              <br className="hidden sm:block" />
+              <span className="hidden sm:inline">Your journey to unforgettable memories starts here.</span>
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Responsive Sizing */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5"
             >
-              <Link to="/tours">
+              <Link to="/tours" className="w-full sm:w-auto">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 10px 40px rgba(77, 168, 255, 0.4)" }}
                   whileTap={{ scale: 0.95 }}
-                  className="group flex items-center space-x-2 bg-skyblue text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all"
+                  className="w-full group flex items-center justify-center space-x-2 btn-primary px-5 py-3 sm:px-6 sm:py-3 lg:px-8 lg:py-4 shadow-lg hover:shadow-2xl"
                 >
-                  <FiSearch className="text-xl" />
-                  <span>Start Exploring</span>
-                  <FiArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
+                  <FiSearch className="text-lg lg:text-xl" />
+                  <span>Plan Your Trip</span>
+                  <FiArrowRight className="text-lg lg:text-xl group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
 
-              <Link to="/flights">
+              <Link to="/insurance" className="w-full sm:w-auto">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group flex items-center space-x-2 bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-xl font-semibold border-2 border-white/30 hover:bg-white/30 transition-all"
+                  className="w-full group flex items-center justify-center space-x-2 bg-white/20 backdrop-blur-md text-white px-5 py-3 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-semibold border-2 border-white/30 hover:bg-white/30 transition-all duration-300"
                 >
-                  <MdFlight className="text-xl" />
-                  <span>Search Flights</span>
+                  <MdHealthAndSafety className="text-lg lg:text-xl" />
+                  <span>Get a Quote</span>
                 </motion.button>
               </Link>
             </motion.div>
 
-            {/* Stats */}
+            {/* Stats - Better Grid Layout for 1024px */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="flex flex-wrap gap-8 mt-12"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-10 "
             >
               {[
                 { number: '200+', label: 'Destinations' },
@@ -163,9 +163,9 @@ const HeroSection = () => {
                 { number: '4.9', label: 'Average Rating' },
                 { number: '24/7', label: 'Support' }
               ].map((stat, index) => (
-                <div key={index} className="text-white">
-                  <div className="text-3xl font-bold text-gold">{stat.number}</div>
-                  <div className="text-white/80">{stat.label}</div>
+                <div key={index} className="text-white text-center sm:text-left">
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gold">{stat.number}</div>
+                  <div className="text-sm sm:text-base text-white/80">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -173,11 +173,11 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
+      {/* Scroll Indicator - Hide on Shorter Screens */}
+      {/* <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white opacity-70"
+        className="hidden lg:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white opacity-70"
       >
         <div className="flex flex-col items-center">
           <span className="text-sm mb-2">Scroll Down</span>
@@ -189,10 +189,10 @@ const HeroSection = () => {
             />
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 right-8 flex space-x-2 z-20">
+      {/* Slide Indicators - Responsive Positioning */}
+      <div className="absolute bottom-6 right-4 sm:bottom-8 sm:right-8 flex space-x-2 z-20">
         {heroImages.map((_, index) => (
           <button
             key={index}
@@ -202,6 +202,7 @@ const HeroSection = () => {
                 ? 'bg-white w-8' 
                 : 'bg-white/50 hover:bg-white/75'
             }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>

@@ -11,10 +11,10 @@ const PackageCard = ({ tour, delay = 0 }) => {
       viewport={{ once: true }}
       transition={{ delay }}
       whileHover={{ y: -10 }}
-      className="glass-card overflow-hidden group"
+      className="glass-card overflow-hidden group flex flex-col h-full"
     >
       {/* Image */}
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-64 overflow-hidden flex-shrink-0">
         <img 
           src={tour.image} 
           alt={tour.title}
@@ -31,7 +31,7 @@ const PackageCard = ({ tour, delay = 0 }) => {
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         {/* Location & Rating */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center space-x-1 text-navy/70">
@@ -73,17 +73,19 @@ const PackageCard = ({ tour, delay = 0 }) => {
           {tour.description}
         </p>
 
-        {/* Button */}
-        <Link to={`/tours/${tour.id}`}>
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full flex items-center justify-center space-x-2 bg-skyblue text-white py-3 rounded-xl font-semibold hover:bg-skyblue/90 transition-colors group"
-          >
-            <span>View Details</span>
-            <MdArrowForward className="group-hover:translate-x-1 transition-transform" />
-          </motion.button>
-        </Link>
+        {/* Button - pushes to bottom with mt-auto */}
+        <div className="mt-auto">
+          <Link to={`/tours/${tour.id}`}>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full flex items-center justify-center space-x-2 btn-primary group"
+            >
+              <span>Book Now</span>
+              <MdArrowForward className="group-hover:translate-x-1 transition-transform" />
+            </motion.button>
+          </Link>
+        </div>
       </div>
     </motion.div>
   )
