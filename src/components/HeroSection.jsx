@@ -196,13 +196,13 @@ const HeroSection = () => {
                 </div>
 
                 <div className="relative">
-                  <FiCalendar className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/60" />
+                  <FiCalendar className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/60 pointer-events-none z-10" />
                   <input
                     type="date"
                     required
                     value={formData.travelDate}
                     onChange={(e) => handleFormChange('travelDate', e.target.value)}
-                    className="form-control-icon"
+                    className="form-control-icon pr-3 min-w-0 [color-scheme:light]"
                   />
                 </div>
 

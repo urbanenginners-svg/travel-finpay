@@ -105,7 +105,13 @@
   }
 
   .form-control-icon {
-    @apply w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none;
+    @apply w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none box-border;
+  }
+
+  input[type="date"].form-control-icon {
+    @apply w-full min-w-0 pl-12 pr-3 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none box-border;
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   .form-select {
