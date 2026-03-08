@@ -204,6 +204,11 @@ const HeroSection = () => {
                     onChange={(e) => handleFormChange('travelDate', e.target.value)}
                     className="form-control-icon pr-3 min-w-0 [color-scheme:light]"
                   />
+                  {!formData.travelDate && (
+                    <span className="absolute left-12 top-1/2 -translate-y-1/2 text-navy/40 text-sm pointer-events-none select-none">
+                      Travel Date
+                    </span>
+                  )}
                 </div>
 
                 <div className="relative">
