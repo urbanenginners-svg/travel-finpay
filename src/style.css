@@ -105,7 +105,7 @@
   }
 
   .form-control-icon {
-    @apply w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none box-border;
+    @apply w-full pl-12 pr-4 py-3 rounded-xl bg-white border-2 border-transparent focus:border-skyblue focus:outline-none box-border placeholder:text-navy/40;
   }
 
   input[type="date"].form-control-icon {
