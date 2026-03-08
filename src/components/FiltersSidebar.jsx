@@ -2,7 +2,12 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 
-const FiltersSidebar = ({ type = 'tours' }) => {
+const FiltersSidebar = ({
+  type = 'tours',
+  filters,
+  onChange,
+  onReset
+}) => {
   const [openSections, setOpenSections] = useState({
     price: true,
     duration: false,
@@ -10,18 +15,19 @@ const FiltersSidebar = ({ type = 'tours' }) => {
     rating: false
   })
 
-  const [filters, setFilters] = useState({
-    priceRange: [0, 5000],
-    duration: [],
-    categories: [],
-    rating: 0
-  })
-
   const toggleSection = (section) => {
     setOpenSections(prev => ({
       ...prev,
       [section]: !prev[section]
     }))
+  }
+
+  const updateFilter = (key, value) => {
+    if (!onChange) return
+    onChange({
+      ...filters,
+      [key]: value
+    })
   }
 
   const tourCategories = ["Beach", "Adventure", "Cultural", "Luxury", "Romance", "City", "Wellness", "Nature"]
@@ -51,16 +57,13 @@ const FiltersSidebar = ({ type = 'tours' }) => {
               type="range"
               min="0"
               max="5000"
-              value={filters.priceRange[1]}
-              onChange={(e) => setFilters({
-                ...filters,
-                priceRange: [0, parseInt(e.target.value)]
-              })}
+              value={filters.maxPrice}
+              onChange={(e) => updateFilter('maxPrice', parseInt(e.target.value, 10))}
               className="w-full"
             />
             <div className="flex justify-between text-sm text-navy/70">
-              <span>₹{filters.priceRange[0]}</span>
-              <span>₹{filters.priceRange[1]}</span>
+              <span>₹0</span>
+              <span>₹{filters.maxPrice}</span>
             </div>
           </motion.div>
         )}
@@ -91,15 +94,9 @@ const FiltersSidebar = ({ type = 'tours' }) => {
                     checked={filters.categories.includes(category)}
                     onChange={(e) => {
                       if (e.target.checked) {
-                        setFilters({
-                          ...filters,
-                          categories: [...filters.categories, category]
-                        })
+                        updateFilter('categories', [...filters.categories, category])
                       } else {
-                        setFilters({
-                          ...filters,
-                          categories: filters.categories.filter(c => c !== category)
-                        })
+                        updateFilter('categories', filters.categories.filter(c => c !== category))
                       }
                     }}
                   />
@@ -132,6 +129,14 @@ const FiltersSidebar = ({ type = 'tours' }) => {
                 <input
                   type="checkbox"
                   className="w-4 h-4 text-skyblue rounded focus:ring-skyblue"
+                  checked={filters.durations.includes(duration)}
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      updateFilter('durations', [...filters.durations, duration])
+                    } else {
+                      updateFilter('durations', filters.durations.filter(d => d !== duration))
+                    }
+                  }}
                 />
                 <span className="text-sm text-navy/70">{duration}</span>
               </label>
@@ -162,8 +167,8 @@ const FiltersSidebar = ({ type = 'tours' }) => {
                   type="radio"
                   name="rating"
                   className="w-4 h-4 text-skyblue focus:ring-skyblue"
-                  checked={filters.rating === rating}
-                  onChange={() => setFilters({ ...filters, rating })}
+                  checked={filters.minRating === rating}
+                  onChange={() => updateFilter('minRating', rating)}
                 />
                 <span className="text-sm text-navy/70">{rating}+ Stars</span>
               </label>
@@ -174,10 +179,10 @@ const FiltersSidebar = ({ type = 'tours' }) => {
 
       {/* Reset & Apply Buttons */}
       <div className="space-y-2">
-        <button className="w-full btn-primary">
-          Apply Filters
-        </button>
-        <button className="w-full btn-outline">
+        <button
+          className="w-full btn-outline"
+          onClick={onReset}
+        >
           Reset All
         </button>
       </div>
