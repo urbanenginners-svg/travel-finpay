@@ -79,10 +79,10 @@ const PopularRoutes = () => {
                     <div className="text-xs uppercase tracking-[0.1em] text-navy/50">Starting from</div>
                     <div className="text-2xl sm:text-3xl font-extrabold text-skyblue mt-1">₹{route.basePrice}</div>
                   </div>
-                  <button className="inline-flex items-center gap-2 rounded-full border border-skyblue/25 bg-skyblue/10 text-skyblue font-semibold text-sm px-4 py-2 hover:bg-skyblue hover:text-white transition-colors">
+                  {/* <button className="inline-flex items-center gap-2 rounded-full border border-skyblue/25 bg-skyblue/10 text-skyblue font-semibold text-sm px-4 py-2 hover:bg-skyblue hover:text-white transition-colors">
                     View Fare
                     <FiArrowRight className="text-sm" />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </motion.div>
