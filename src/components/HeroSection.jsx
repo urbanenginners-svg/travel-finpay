@@ -1,36 +1,69 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FiSearch, FiArrowRight } from 'react-icons/fi'
-import { MdHealthAndSafety } from 'react-icons/md'
+import { FiArrowRight, FiCalendar, FiDollarSign, FiMapPin, FiSend, FiUsers } from 'react-icons/fi'
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [formData, setFormData] = useState({
+    destination: '',
+    travelDate: '',
+    travellers: '2',
+    budget: '1000-2500'
+  })
 
   const heroImages = [
     {
-      url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&auto=format&fit=crop',
-      alt: 'Tropical Beach Paradise'
+      url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=2400&auto=format&fit=crop&q=85',
+      alt: 'Bright tropical beach destination'
     },
     {
-      url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&auto=format&fit=crop',
-      alt: 'Mountain Adventure'
+      url: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=2400&auto=format&fit=crop&q=85',
+      alt: 'Sunlit mountain lake and forest landscape'
     },
     {
-      url: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&auto=format&fit=crop',
-      alt: 'City Skyline'
+      url: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=2400&auto=format&fit=crop&q=85',
+      alt: 'Vibrant overwater villas destination'
     }
   ]
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length)
-    }, 5000)
+    }, 6000)
     return () => clearInterval(timer)
   }, [])
 
+  const handleFormChange = (field, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value
+    }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const subject = `New Travel Inquiry - ${formData.destination}`
+    const body = [
+      'Hello Operations Team,',
+      '',
+      'Please find my travel inquiry below:',
+      `Destination: ${formData.destination}`,
+      `Travel Date: ${formData.travelDate}`,
+      `Number of Travellers: ${formData.travellers}`,
+      `Budget: ${formData.budget}`,
+      '',
+      'Please contact me with suitable options.',
+      '',
+      'Thanks,'
+    ].join('\n')
+
+    window.location.href = `mailto:operations@finpayremit.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  }
+
   return (
-    <div className="relative md:min-h-screen md:h-screen w-full overflow-hidden">
+    <section className="relative min-h-[92vh] w-full overflow-hidden">
       {/* Background Image Slider */}
       {heroImages.map((image, index) => (
         <motion.div
@@ -48,165 +81,214 @@ const HeroSection = () => {
       ))}
 
       {/* Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/65 via-navy/50 to-navy/25" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(77,168,255,0.22),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(79,209,197,0.2),transparent_50%)]" />
 
-      {/* Floating Animated Blobs - Responsive Sizes */}
+      {/* Decorative Blobs */}
       <motion.div
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3]
+          scale: [1, 1.18, 1],
+          opacity: [0.2, 0.35, 0.2]
         }}
         transition={{
           duration: 8,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: 'easeInOut'
         }}
-        className="absolute top-10 -right-10 w-64 h-64 md:w-80 md:h-80 lg:top-20 lg:right-10 xl:w-96 xl:h-96 xl:right-20 bg-skyblue/30 rounded-full blur-3xl"
+        className="absolute top-8 -right-20 w-72 h-72 md:w-96 md:h-96 bg-skyblue/30 rounded-full blur-3xl"
       />
       <motion.div
         animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.2, 0.4, 0.2]
+          scale: [1, 1.22, 1],
+          opacity: [0.18, 0.3, 0.18]
         }}
         transition={{
           duration: 10,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: 'easeInOut',
           delay: 1
         }}
-        className="absolute bottom-10 -left-10 w-64 h-64 md:w-80 md:h-80 lg:bottom-20 lg:left-10 xl:w-96 xl:h-96 xl:left-20 bg-teal/30 rounded-full blur-3xl"
+        className="absolute -bottom-16 -left-16 w-72 h-72 md:w-[28rem] md:h-[28rem] bg-teal/30 rounded-full blur-3xl"
       />
 
       {/* Content */}
-      <div className="relative z-10 min-h-full flex items-start pt-15 sm:pt-32 md:items-center md:pt-0 xl:pt-20  pb-20 md:pb-0">
-        <div className="site-container">
-          <div className="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mt-16 sm:mt-12 md:mt-20 lg:mt-0">
-            {/* Animated Badge */}
+      <div className="relative z-10 site-container pt-28 md:pt-32 pb-12 md:pb-16">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-10 items-center min-h-[78vh]">
+          <div className="xl:col-span-7">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-4 sm:mb-6 sm:mt-8"
+              className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full mb-5"
             >
               <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-              <span className="text-white text-xs sm:text-sm font-medium ">
-                Trusted by 10,000+ Happy Travelers
-              </span>
+              <span className="text-white text-sm font-medium">Premium tours, flights and insurance in one place</span>
             </motion.div>
 
-            {/* Main Headline - Better Responsive Scaling */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+              transition={{ delay: 0.35 }}
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-5"
             >
-              Explore the World with{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-skyblue via-teal to-gold">
-                finyourtrip
-              </span>
+              Explore the world with{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-skyblue via-teal to-gold">finyoutrip</span>
             </motion.h1>
 
-            {/* Subtext - Better Responsive Scaling */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 mb-6 sm:mb-8 leading-relaxed"
+              transition={{ delay: 0.5 }}
+              className="text-base sm:text-lg lg:text-xl text-white/90 max-w-2xl leading-relaxed mb-8"
             >
-              Flights, Tours & Travel Insurance — All in One Smart Platform.
-              <br className="hidden sm:block" />
-              <span className="hidden sm:inline">Your journey to unforgettable memories starts here.</span>
+              Your journey to unforgettable memories starts here.
             </motion.p>
 
-            {/* CTA Buttons - Responsive Sizing */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5"
+              transition={{ delay: 0.65 }}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
               <Link to="/tours" className="w-full sm:w-auto">
                 <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 40px rgba(77, 168, 255, 0.4)" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full group flex items-center justify-center space-x-2 btn-primary px-5 py-3 sm:px-6 sm:py-3 lg:px-8 lg:py-4 shadow-lg hover:shadow-2xl"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="w-full btn-primary inline-flex items-center justify-center gap-2"
                 >
-                  <FiSearch className="text-lg lg:text-xl" />
-                  <span>Plan Your Trip</span>
-                  <FiArrowRight className="text-lg lg:text-xl group-hover:translate-x-1 transition-transform" />
+                  Explore Packages
+                  <FiArrowRight />
                 </motion.button>
               </Link>
-
-              <Link to="/insurance" className="w-full sm:w-auto">
+              <Link to="/flights" className="w-full sm:w-auto">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full group flex items-center justify-center space-x-2 bg-white/20 backdrop-blur-md text-white px-5 py-3 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-semibold border-2 border-white/30 hover:bg-white/30 transition-all duration-300"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="w-full px-6 py-3 rounded-xl font-semibold border-2 border-white/60 text-white hover:bg-white/20 transition-all"
                 >
-                  <MdHealthAndSafety className="text-lg lg:text-xl" />
-                  <span>Get a Quote</span>
+                  Find Flights
                 </motion.button>
               </Link>
-            </motion.div>
-
-            {/* Stats - Better Grid Layout for 1024px */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-10 "
-            >
-              {[
-                { number: '200+', label: 'Destinations' },
-                { number: '50K+', label: 'Happy Travelers' },
-                { number: '4.9', label: 'Average Rating' },
-                { number: '24/7', label: 'Support' }
-              ].map((stat, index) => (
-                <div key={index} className="text-white text-center sm:text-left">
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gold">{stat.number}</div>
-                  <div className="text-sm sm:text-base text-white/80">{stat.label}</div>
-                </div>
-              ))}
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.75 }}
+            className="xl:col-span-5"
+          >
+            <div className="rounded-2xl border border-white/30 bg-white/85 backdrop-blur-xl shadow-[0_18px_50px_rgba(15,23,42,0.35)] p-6 sm:p-7">
+              <h2 className="text-2xl font-bold text-navy mb-1">Plan Your Trip</h2>
+              <p className="text-sm text-navy/70 mb-6">Share your preferences and our team will curate options for you.</p>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="relative">
+                  <FiMapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/60" />
+                  <input
+                    type="text"
+                    required
+                    placeholder="Destination"
+                    value={formData.destination}
+                    onChange={(e) => handleFormChange('destination', e.target.value)}
+                    className="form-control-icon"
+                  />
+                </div>
+
+                <div className="relative">
+                  <FiCalendar className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/60" />
+                  <input
+                    type="date"
+                    required
+                    value={formData.travelDate}
+                    onChange={(e) => handleFormChange('travelDate', e.target.value)}
+                    className="form-control-icon"
+                  />
+                </div>
+
+                <div className="relative">
+                  <FiUsers className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/60" />
+                  <select
+                    value={formData.travellers}
+                    onChange={(e) => handleFormChange('travellers', e.target.value)}
+                    className="form-control-icon appearance-none"
+                  >
+                    <option value="1">1 Traveller</option>
+                    <option value="2">2 Travellers</option>
+                    <option value="3">3 Travellers</option>
+                    <option value="4+">4+ Travellers</option>
+                  </select>
+                </div>
+
+                <div className="relative">
+                  <FiDollarSign className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/60" />
+                  <select
+                    value={formData.budget}
+                    onChange={(e) => handleFormChange('budget', e.target.value)}
+                    className="form-control-icon appearance-none"
+                  >
+                    <option value="500-1000">$500 - $1,000</option>
+                    <option value="1000-2500">$1,000 - $2,500</option>
+                    <option value="2500-5000">$2,500 - $5,000</option>
+                    <option value="5000+">$5,000+</option>
+                  </select>
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className="w-full btn-primary inline-flex items-center justify-center gap-2"
+                >
+                  <FiSend />
+                  Submit Inquiry
+                </motion.button>
+              </form>
+
+              <p className="text-xs text-navy/60 mt-4">
+                Inquiry email will be sent to <span className="font-semibold text-navy">operations@finpayremit.com</span>
+              </p>
+            </div>
+          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.95 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-10 lg:mt-12"
+        >
+          {[
+            { number: '200+', label: 'Destinations' },
+            { number: '50K+', label: 'Happy Travelers' },
+            { number: '4.9', label: 'Average Rating' },
+            { number: '24/7', label: 'Travel Support' }
+          ].map((stat, index) => (
+            <div key={index} className="rounded-xl bg-white/15 border border-white/25 px-4 py-3 text-center md:text-left backdrop-blur-sm">
+              <div className="text-2xl font-bold text-gold">{stat.number}</div>
+              <div className="text-sm text-white/85">{stat.label}</div>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
-      {/* Scroll Indicator - Hide on Shorter Screens */}
-      {/* <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-        className="hidden lg:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white opacity-70"
-      >
-        <div className="flex flex-col items-center">
-          <span className="text-sm mb-2">Scroll Down</span>
-          <div className="w-6 h-10 border-2 border-white rounded-full flex items-start justify-center p-2">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-1.5 bg-white rounded-full"
-            />
-          </div>
-        </div>
-      </motion.div> */}
-
-      {/* Slide Indicators - Responsive Positioning */}
+      {/* Slide Indicators */}
       <div className="absolute bottom-6 right-4 sm:bottom-8 sm:right-8 flex space-x-2 z-20">
         {heroImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentSlide 
-                ? 'bg-white w-8' 
-                : 'bg-white/50 hover:bg-white/75'
+            className={`h-2 rounded-full transition-all ${
+              index === currentSlide ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/75 w-2'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
-    </div>
+
+      {/* Accessibility helper */}
+      <span className="sr-only">{heroImages[currentSlide].alt}</span>
+    </section>
   )
 }
 

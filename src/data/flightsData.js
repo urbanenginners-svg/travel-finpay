@@ -172,12 +172,12 @@ export const flightsData = [
 ]
 
 export const popularRoutes = [
-  { from: "New York", to: "London", basePrice: 499 },
-  { from: "Dubai", to: "Singapore", basePrice: 399 },
-  { from: "Paris", to: "Tokyo", basePrice: 799 },
-  { from: "Los Angeles", to: "Sydney", basePrice: 899 },
-  { from: "Mumbai", to: "Dubai", basePrice: 299 },
-  { from: "Istanbul", to: "New York", basePrice: 599 }
+  { from: "New York", to: "Dubai", basePrice: 649 },
+  { from: "London", to: "Bali", basePrice: 899 },
+  { from: "Singapore", to: "Thailand", basePrice: 319 },
+  { from: "Mumbai", to: "Singapore", basePrice: 429 },
+  { from: "Delhi", to: "Goa", basePrice: 199 },
+  { from: "Bengaluru", to: "Kashmir", basePrice: 279 }
 ]
 
 export const cabinClasses = ["Economy", "Premium Economy", "Business", "First Class"]
